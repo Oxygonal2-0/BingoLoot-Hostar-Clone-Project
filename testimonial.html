@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .hero{
+            background: #ff676d;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+        .hero h1{
+            text-align: center;
+            padding-top: 80px;
+            font-size: 40px;
+            color: #fff;
+        }
+
+        .slide-row{
+            display: flex;
+            width: 3200px;
+            transition: 0.5s;
+        }
+        .slide-col{
+            width: 800px;
+            height: 400px;
+            position: relative;
+        }
+        .user_img{
+            position: absolute;
+            top:0;
+            right: 0;
+            height: 100%
+        }
+        .user_img img{
+            height: 100%;
+            /*width: 300px;*/
+            border-radius: 10px;
+        }
+        .user-text{
+            background: #2e3a59;
+            width: 520px;
+            height: 270px;
+            position: absolute;
+            left :0;
+            top:50%;
+            transform: translateY(-50%);
+            border-radius: 10px;
+            color: #d3d4d6;
+            padding: 45px;
+            box-sizing: border-box;
+            z-index: 2;
+        }
+        .user-text p{
+            font-size: 18px;
+            line-height: 24px;
+        }
+        .user-text h3{
+            margin: 35px 0 5px;
+            color: #fff;
+        }
+        .container{
+            width: 800px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .indicator{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -50px;
+        }
+        .btn{
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            margin: 4px;
+            border-radius: 15px;
+            background: #fff;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .active{
+            width: 45px;
+        }
+        .testimonial{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <h1>Testimonial</h1>
+        <div class="container">
+            <div class="indicator">
+                <span class="btn active"></span>
+                <span class="btn"></span>
+                <span class="btn"></span>
+                <span class="btn"></span>
+            </div>
+            <div class="testimonial">
+                <div class="slide-row" id="slide">
+                    <div class="slide-col">
+                        <div class="user-text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis voluptate iste id, eos sapiente minus beatae consectetur quos ipsa labore voluptates necessitatibus sed tempora praesentium illo officia ab. Dignissimos?</p>
+                            <h3>Sarah</h3>
+                            <p>Zara Inc.</p>
+                        </div>
+                        <div class="user_img">
+                            <img src="images/movie/3idiot portrait.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="slide-col">
+                        <div class="user-text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis voluptate iste id, eos sapiente minus beatae consectetur quos ipsa labore voluptates necessitatibus sed tempora praesentium illo officia ab. Dignissimos?</p>
+                            <h3>MAYUR</h3>
+                            <p>Mayur Inc.</p>
+                        </div>
+                        <div class="user_img">
+                            <img src="images/movie/3idiot portrait.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="slide-col">
+                        <div class="user-text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis voluptate iste id, eos sapiente minus beatae consectetur quos ipsa labore voluptates necessitatibus sed tempora praesentium illo officia ab. Dignissimos?</p>
+                            <h3>VAIBHAV</h3>
+                            <p>Vaibham Inc.</p>
+                        </div>
+                        <div class="user_img">
+                            <img src="images/movie/3idiot portrait.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="slide-col">
+                        <div class="user-text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis voluptate iste id, eos sapiente minus beatae consectetur quos ipsa labore voluptates necessitatibus sed tempora praesentium illo officia ab. Dignissimos?</p>
+                            <h3>MAHESH</h3>
+                            <p>Mahesh Inc.</p>
+                        </div>
+                        <div class="user_img">
+                            <img src="images/movie/3idiot portrait.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var btn = document.getElementsByClassName("btn");
+        var slide = document.getElementById("slide");
+        btn[0].onclick = function(){
+            slide.style.transform = "translateX(0px)";
+            for(i=0;i<4;i++)
+            {
+                btn[i].classList.remove("active");
+            }
+            this.classList.add("active");
+        }
+        btn[1].onclick = function(){
+            slide.style.transform = "translateX(-800px)";
+            for(i=0;i<4;i++)
+            {
+                btn[i].classList.remove("active");
+            }
+            this.classList.add("active");
+        }
+        btn[2].onclick = function(){
+            slide.style.transform = "translateX(-1600px)";
+            for(i=0;i<4;i++)
+            {
+                btn[i].classList.remove("active");
+            }
+            this.classList.add("active");
+        }
+        btn[3].onclick = function(){
+            slide.style.transform = "translateX(-2400px)";
+            for(i=0;i<4;i++)
+            {
+                btn[i].classList.remove("active");
+            }
+            this.classList.add("active");
+        }
+    </script>
+
+
+</body>
+</html>
